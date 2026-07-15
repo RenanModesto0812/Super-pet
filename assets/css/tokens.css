@@ -1,0 +1,72 @@
+/* Super Pet Shop — Design Tokens
+   Conceito: capa de HQ / cartaz de ação vintage, premium e editorial.
+   NÃO alterar a paleta base. Opacidades derivadas são permitidas. */
+
+:root {
+  /* Cores base */
+  --ink: #0E1116;
+  --paper: #F5F1E8;
+  --volt: #F4D53A;
+  --cobalt: #2B4BF2;
+  --blaze: #FF4B33;
+  --ink-60: rgba(14, 17, 22, 0.6);
+  --ink-40: rgba(14, 17, 22, 0.4);
+  --ink-20: rgba(14, 17, 22, 0.2);
+  --paper-90: rgba(245, 241, 232, 0.9);
+  --paper-70: rgba(245, 241, 232, 0.7);
+  --paper-40: rgba(245, 241, 232, 0.4);
+  --paper-12: rgba(245, 241, 232, 0.12);
+  --volt-20: rgba(244, 213, 58, 0.2);
+  --volt-40: rgba(244, 213, 58, 0.4);
+  --cobalt-20: rgba(43, 75, 242, 0.2);
+  --blaze-15: rgba(255, 75, 51, 0.15);
+
+  /* Tipografia */
+  --font-display: "Bebas Neue", "Anton", "Impact", "Arial Narrow", sans-serif;
+  --font-body: "Public Sans", "Inter", system-ui, -apple-system, sans-serif;
+
+  /* Escala tipográfica */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: clamp(2.25rem, 5vw, 3.5rem);
+  --text-5xl: clamp(2.75rem, 7vw, 5rem);
+  --text-hero: clamp(3rem, 9vw, 6.5rem);
+
+  /* Espaçamento */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+
+  /* Layout */
+  --container: 72rem;
+  --header-h: 4.5rem;
+  --radius: 4px;
+  --border-panel: 3px solid var(--ink);
+  --shadow-hard: 6px 6px 0 var(--ink);
+  --shadow-hard-sm: 4px 4px 0 var(--ink);
+  --shadow-hard-paper: 6px 6px 0 var(--paper);
+  --shadow-hard-volt: 6px 6px 0 var(--volt);
+
+  /* Transições */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration: 0.25s;
+  --duration-slow: 0.45s;
+
+  /* Z-index */
+  --z-header: 100;
+  --z-overlay: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+}

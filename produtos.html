@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Produtos | Super Pet Shop Cuiabá — Ração, Higiene e Acessórios</title>
+  <meta name="description" content="Catálogo Super Pet Shop: ração premium, higiene, acessórios e petiscos para cães e gatos. Peça pelo WhatsApp (65) 99304-3088. Dom Aquino, Cuiabá-MT." />
+  <meta name="theme-color" content="#0E1116" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:title" content="Produtos — Super Pet Shop" />
+  <meta property="og:description" content="Arsenal completo para o herói de casa. Filtre por categoria e peça no WhatsApp." />
+  <meta property="og:image" content="assets/img/logo.png" />
+
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="assets/img/favicon-32.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/tokens.css" />
+  <link rel="stylesheet" href="assets/css/reset.css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="site-header" id="site-header">
+    <div class="container site-header__inner">
+      <a class="logo" href="index.html" aria-label="Super Pet Shop — início">
+        <img src="assets/img/logo-header.png" alt="Super Pet Shop — Banho &amp; Tosa" width="168" height="80" />
+      </a>
+
+      <nav class="nav" aria-label="Principal">
+        <a class="nav__link" href="index.html#inicio" data-nav="inicio">Início</a>
+        <a class="nav__link" href="produtos.html" data-nav="produtos">Produtos</a>
+        <a class="nav__link" href="index.html#servicos">Serviços</a>
+        <a class="nav__link" href="index.html#sobre">Sobre</a>
+        <a class="nav__link" href="index.html#contato">Contato</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn--volt btn--sm" data-schedule="banho e tosa" href="https://wa.me/5565993043088" target="_blank" rel="noopener noreferrer">
+          Agendar banho &amp; tosa
+        </a>
+        <button type="button" class="cart-btn" data-open-cart aria-label="Abrir carrinho">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 6h15l-1.5 9h-12z" />
+            <path d="M6 6L5 3H2" />
+            <circle cx="9" cy="20" r="1.5" fill="currentColor" stroke="none" />
+            <circle cx="18" cy="20" r="1.5" fill="currentColor" stroke="none" />
+          </svg>
+          <span class="cart-btn__badge" data-cart-count data-count="0"></span>
+        </button>
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Abrir menu">
+          <span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-panel" id="nav-panel" aria-hidden="true">
+    <nav aria-label="Mobile">
+      <a class="nav__link" href="index.html#inicio">Início</a>
+      <a class="nav__link" href="produtos.html">Produtos</a>
+      <a class="nav__link" href="index.html#cartao-heroi">Cartão de Herói</a>
+      <a class="nav__link" href="index.html#servicos">Serviços</a>
+      <a class="nav__link" href="index.html#sobre">Sobre</a>
+      <a class="nav__link" href="index.html#contato">Contato</a>
+    </nav>
+    <a class="btn btn--volt nav-panel__cta" data-schedule="banho e tosa" href="https://wa.me/5565993043088" target="_blank" rel="noopener noreferrer">
+      Agendar banho &amp; tosa
+    </a>
+  </div>
+
+  <main id="conteudo">
+    <section class="page-hero halftone" aria-labelledby="page-title">
+      <div class="container">
+        <p class="label hero__kicker" style="color: var(--volt)">Catálogo</p>
+        <h1 id="page-title">Arsenal completo</h1>
+        <p>
+          Filtre por categoria, monte o carrinho e finalize no WhatsApp.
+          Preços de referência — confirmação de estoque com a loja.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--paper" id="catalogo" aria-labelledby="catalogo-title">
+      <div class="container">
+        <h2 class="sr-only" id="catalogo-title">Lista de produtos</h2>
+
+        <div class="product-toolbar reveal">
+          <div class="filters" role="group" aria-label="Filtrar por categoria">
+            <button type="button" class="filter-btn is-active" data-filter="all" aria-pressed="true">Todos</button>
+            <button type="button" class="filter-btn" data-filter="caes" aria-pressed="false">Cães</button>
+            <button type="button" class="filter-btn" data-filter="gatos" aria-pressed="false">Gatos</button>
+            <button type="button" class="filter-btn" data-filter="higiene" aria-pressed="false">Higiene</button>
+            <button type="button" class="filter-btn" data-filter="acessorios" aria-pressed="false">Acessórios</button>
+          </div>
+          <a class="btn btn--outline-ink btn--sm" href="index.html#cartao-heroi">Criar Cartão de Herói →</a>
+        </div>
+
+        <div class="product-grid product-grid--4" data-product-grid></div>
+      </div>
+    </section>
+
+    <section class="section section--ink">
+      <div class="container text-center reveal">
+        <h2 class="section-head__title">Não achou o que precisava?</h2>
+        <p class="section-head__text" style="margin-inline: auto; margin-bottom: var(--space-5)">
+          Manda no WhatsApp o nome do produto ou da marca. Se estiver no radar de Cuiabá, a gente localiza.
+        </p>
+        <a class="btn btn--volt" data-schedule="encomenda de produto" href="https://wa.me/5565993043088" target="_blank" rel="noopener noreferrer">
+          Pedir no WhatsApp
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/img/logo.png" alt="Super Pet Shop" width="200" height="96" loading="lazy" />
+          <p>
+            Av. Dom Bosco, 312 — Dom Aquino, Cuiabá-MT. WhatsApp (65) 99304-3088.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h3>Navegação</h3>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="index.html#servicos">Serviços</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contato</h3>
+          <ul>
+            <li><a href="https://wa.me/5565993043088" target="_blank" rel="noopener noreferrer">(65) 99304-3088</a></li>
+            <li><a href="https://maps.app.goo.gl/q877E9EMePEubVwVA" target="_blank" rel="noopener noreferrer">Google Maps</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Horário</h3>
+          <ul class="footer-hours">
+            <li><span>Seg – Sex</span><span>08h – 18h</span></li>
+            <li><span>Sábado</span><span>08h – 14h</span></li>
+            <li><span>Domingo</span><span>Fechado</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span data-year></span> Super Pet Shop. Dom Aquino, Cuiabá-MT.</p>
+        <p>Seu pet. Herói de verdade.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cart-drawer-overlay" id="cart-overlay" data-close-cart></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Carrinho" aria-hidden="true">
+    <div class="cart-drawer__head">
+      <h2>Arsenal</h2>
+      <button type="button" class="btn btn--ghost" data-close-cart aria-label="Fechar carrinho">✕</button>
+    </div>
+    <div class="cart-drawer__body" id="cart-drawer-body"></div>
+    <div class="cart-drawer__foot">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cart-total-value">R$&nbsp;0,00</span>
+      </div>
+      <button type="button" class="btn btn--volt btn--full" data-checkout>Pedir no WhatsApp</button>
+    </div>
+  </aside>
+
+  <a
+    class="wa-float"
+    data-schedule="banho e tosa"
+    href="https://wa.me/5565993043088"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Agendar no WhatsApp"
+  >
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 2.1 17.2L1 23l5.9-1.1A11 11 0 0 0 12 23a11 11 0 0 0 8.5-19.5zM12 21a9 9 0 0 1-4.6-1.3l-.3-.2-3.5.7.7-3.4-.2-.3A9 9 0 1 1 12 21zm5-6.7c-.3-.1-1.6-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.7-2.8-1.3-3.9-3-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.2.2-1.3 0-.1-.2-.2-.5-.3z"/></svg>
+    <span>Agendar no WhatsApp</span>
+  </a>
+
+  <script src="assets/js/products.js" defer></script>
+  <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script>
+    // Deep-link ?cat=caes|gatos|higiene|acessorios
+    document.addEventListener("DOMContentLoaded", function () {
+      var params = new URLSearchParams(window.location.search);
+      var cat = params.get("cat");
+      if (!cat) return;
+      var btn = document.querySelector('[data-filter="' + cat + '"]');
+      if (btn) btn.click();
+    });
+  </script>
+</body>
+</html>
