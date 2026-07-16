@@ -1,24 +1,26 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Super Pet Shop | Banho, Tosa e Heróis de Quatro Patas em Cuiabá</title>
-  <meta name="description" content="Super Pet Shop em Dom Aquino, Cuiabá-MT. Banho e tosa, produtos premium e cuidados de herói para cães e gatos. Agende pelo WhatsApp (65) 99304-3088." />
-  <meta name="theme-color" content="#0E1116" />
+  <title>Super Pet Shop | Pet Shop Premium — Banho, Tosa e Cuidados Veterinários</title>
+  <meta name="description" content="Super Pet Shop: banho, tosa, consultas veterinárias, vacinas, hotelzinho e produtos selecionados. Cuidado premium para quem faz parte da sua família." />
+  <meta name="theme-color" content="#1F5FBF" />
+  <meta name="keywords" content="pet shop, banho e tosa, veterinário, vacinas, Dom Aquino, Cuiabá, Super Pet Shop" />
+  <meta name="author" content="Super Pet Shop" />
   <link rel="canonical" href="https://superpetshop.com.br/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
-  <meta property="og:title" content="Super Pet Shop — Seu pet. Herói de verdade." />
-  <meta property="og:description" content="Pet shop em Cuiabá com banho e tosa, vitrine de produtos e o Cartão de Herói do seu pet. Av. Dom Bosco, 312 — Dom Aquino." />
+  <meta property="og:title" content="Super Pet Shop — O melhor cuidado para sua família" />
+  <meta property="og:description" content="Banho, tosa e cuidados em Dom Aquino, Cuiabá-MT. Av. Dom Bosco, 312. WhatsApp (65) 99304-3088." />
   <meta property="og:image" content="assets/img/logo.png" />
   <meta property="og:site_name" content="Super Pet Shop" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Super Pet Shop — Seu pet. Herói de verdade." />
-  <meta name="twitter:description" content="Banho, tosa e arsenal completo para cães e gatos em Cuiabá-MT." />
+  <meta name="twitter:title" content="Super Pet Shop" />
+  <meta name="twitter:description" content="Pet shop em Dom Aquino, Cuiabá: banho, tosa e carinho de verdade." />
 
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" href="assets/img/favicon-32.png" sizes="32x32" />
@@ -26,630 +28,642 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="assets/css/tokens.css" />
-  <link rel="stylesheet" href="assets/css/reset.css" />
-  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
-  <!-- ========== HEADER ========== -->
-  <header class="site-header" id="site-header">
-    <div class="container site-header__inner">
-      <a class="logo" href="index.html" aria-label="Super Pet Shop — início">
-        <img src="assets/img/logo-header.png" alt="Super Pet Shop — Banho &amp; Tosa" width="168" height="80" />
+  <!-- ========== NAVBAR ========== -->
+  <header class="navbar" id="navbar" data-navbar>
+    <div class="container navbar__inner">
+      <a class="logo" href="#inicio" aria-label="Super Pet Shop — início">
+        <img src="assets/img/logo-header.png" alt="Super Pet Shop — Banho &amp; Tosa" width="200" height="80" />
       </a>
 
       <nav class="nav" aria-label="Principal">
-        <a class="nav__link" href="#inicio" data-nav="inicio">Início</a>
-        <a class="nav__link" href="produtos.html" data-nav="produtos">Produtos</a>
+        <a class="nav__link" href="#inicio">Início</a>
         <a class="nav__link" href="#servicos">Serviços</a>
         <a class="nav__link" href="#sobre">Sobre</a>
+        <a class="nav__link" href="#galeria">Galeria</a>
+        <a class="nav__link" href="#depoimentos">Depoimentos</a>
+        <a class="nav__link" href="#agendar">Agendar</a>
         <a class="nav__link" href="#contato">Contato</a>
       </nav>
 
-      <div class="header-actions">
-        <a class="btn btn--volt btn--sm" data-schedule="banho e tosa" href="https://wa.me/5565993043088?text=Ol%C3%A1%2C%20Super%20Pet%20Shop!%20Quero%20agendar%20*banho%20e%20tosa*." target="_blank" rel="noopener noreferrer">
-          Agendar banho &amp; tosa
+      <div class="navbar__actions">
+        <a class="btn btn--primary btn--sm" href="#agendar">
+          Agendar
         </a>
-        <button type="button" class="cart-btn" data-open-cart aria-label="Abrir carrinho">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M6 6h15l-1.5 9h-12z" />
-            <path d="M6 6L5 3H2" />
-            <circle cx="9" cy="20" r="1.5" fill="currentColor" stroke="none" />
-            <circle cx="18" cy="20" r="1.5" fill="currentColor" stroke="none" />
-          </svg>
-          <span class="cart-btn__badge" data-cart-count data-count="0"></span>
-        </button>
         <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Abrir menu">
-          <span class="nav-toggle__bar"></span>
+          <span></span>
         </button>
       </div>
     </div>
-  </header>
 
-  <div class="nav-panel" id="nav-panel" aria-hidden="true">
-    <nav aria-label="Mobile">
-      <a class="nav__link" href="#inicio">Início</a>
-      <a class="nav__link" href="produtos.html">Produtos</a>
-      <a class="nav__link" href="#cartao-heroi">Cartão de Herói</a>
-      <a class="nav__link" href="#servicos">Serviços</a>
-      <a class="nav__link" href="#sobre">Sobre</a>
-      <a class="nav__link" href="#contato">Contato</a>
-    </nav>
-    <a class="btn btn--volt nav-panel__cta" data-schedule="banho e tosa" href="https://wa.me/5565993043088" target="_blank" rel="noopener noreferrer">
-      Agendar banho &amp; tosa
-    </a>
-  </div>
+    <div class="nav-panel" id="nav-panel" aria-hidden="true">
+      <nav aria-label="Mobile">
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#agendar">Agendar</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <a class="btn btn--primary btn--full" href="#agendar">
+        Agendar pelo WhatsApp
+      </a>
+    </div>
+  </header>
 
   <main id="conteudo">
     <!-- ========== HERO ========== -->
-    <section class="hero halftone" id="inicio" aria-labelledby="hero-title">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="blob blob--1"></div>
+        <div class="blob blob--2"></div>
+        <div class="blob blob--3"></div>
+      </div>
+
       <div class="container hero__grid">
-        <div class="hero__copy">
-          <p class="label hero__kicker">Dom Aquino · Cuiabá-MT</p>
-          <h1 class="hero__title" id="hero-title">
-            Seu pet.<em>Herói de verdade.</em>
+        <div class="hero__copy reveal">
+          <p class="eyebrow">
+            <span class="eyebrow__dot"></span>
+            Dom Aquino · Cuiabá-MT
+          </p>
+          <h1 id="hero-title">
+            O melhor cuidado para quem faz parte da
+            <span class="text-gradient">sua família.</span>
           </h1>
           <p class="hero__lead">
-            No Super Pet Shop, banho, tosa e o arsenal certo não são luxo — são o kit do protagonista.
-            Entre na base, monte o cartão de herói e saia com o pet pronto para a próxima missão.
+            Banho, tosa, consultas veterinárias, vacinas, hotelzinho e produtos selecionados
+            para oferecer todo o carinho que seu pet merece.
           </p>
           <div class="hero__actions">
-            <a class="btn btn--volt" href="#produtos">Ver produtos</a>
-            <a class="btn btn--outline" href="#servicos">Conhecer serviços</a>
+            <a class="btn btn--whatsapp btn--lg" href="#agendar">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 2.1 17.2L1 23l5.9-1.1A11 11 0 0 0 12 23a11 11 0 0 0 8.5-19.5zM12 21a9 9 0 0 1-4.6-1.3l-.3-.2-3.5.7.7-3.4-.2-.3A9 9 0 1 1 12 21zm5-6.7c-.3-.1-1.6-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.7-2.8-1.3-3.9-3-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.2.2-1.3 0-.1-.2-.2-.5-.3z"/></svg>
+              Agendar pelo WhatsApp
+            </a>
+            <a class="btn btn--secondary btn--lg" href="#servicos">
+              Conhecer serviços
+            </a>
           </div>
         </div>
 
-        <div class="hero__panel" aria-hidden="false">
-          <div class="hero__burst">EDIÇÃO<br />ESPECIAL</div>
-          <figure class="hero__frame">
-            <img src="assets/img/hero-pet.png" alt="Ilustração editorial de um cão herói em painel de quadrinho" width="600" height="700" fetchpriority="high" />
-            <figcaption class="hero__caption">
-              <span class="label">Painel 01</span>
-              <p>Missão: cuidado diário</p>
+        <div class="hero__visual reveal" data-parallax>
+          <div class="hero__orbits" aria-hidden="true">
+            <span class="float float--paw" style="--d:0s">🐾</span>
+            <span class="float float--bone" style="--d:0.6s">🦴</span>
+            <span class="float float--ball" style="--d:1.2s"></span>
+            <span class="float float--heart" style="--d:1.8s">♡</span>
+            <span class="float float--paw float--sm" style="--d:2.2s">🐾</span>
+            <span class="float float--heart float--sm" style="--d:0.3s">♡</span>
+          </div>
+
+          <div class="hero__shape hero__shape--blue" aria-hidden="true"></div>
+          <div class="hero__shape hero__shape--mint" aria-hidden="true"></div>
+          <div class="hero__shape hero__shape--soft" aria-hidden="true"></div>
+
+          <figure class="hero__photo">
+            <img
+              src="assets/img/hero-dog.jpg"
+              alt="Cachorro feliz após o banho e tosa no Super Pet Shop"
+              width="900"
+              height="750"
+              fetchpriority="high"
+            />
+            <figcaption class="hero__card glass">
+              <span class="hero__card-icon" aria-hidden="true">📍</span>
+              <div>
+                <strong>Av. Dom Bosco, 312</strong>
+                <span>Dom Aquino · Cuiabá-MT</span>
+              </div>
             </figcaption>
           </figure>
         </div>
       </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <span>Role para explorar</span>
+        <div class="hero__scroll-line"></div>
+      </div>
     </section>
 
-    <!-- ========== CARTÃO DE HERÓI ========== -->
-    <section class="section section--ink hero-card-section diagonal-top" id="cartao-heroi" aria-labelledby="hero-card-title">
+    <!-- ========== SERVIÇOS ========== -->
+    <section class="section services" id="servicos" aria-labelledby="servicos-title">
       <div class="container">
         <header class="section-head reveal">
-          <p class="label section-head__kicker">Elemento-assinatura</p>
-          <h2 class="section-head__title" id="hero-card-title">Monte o Cartão de Herói do seu pet</h2>
+          <p class="eyebrow">Serviços</p>
+          <h2 id="servicos-title">Tudo o que seu pet precisa, em um só lugar</h2>
           <p class="section-head__text">
-            Suba uma foto, escolha o porte e digite o nome. A gente monta na hora uma capa de HQ
-            pronta para baixar e mandar no grupo da família — porque todo herói merece título de capa.
+            Experiência completa de cuidado — da higiene ao acompanhamento clínico —
+            com o padrão de uma clínica de alto nível.
           </p>
         </header>
 
-        <div class="hero-card-layout">
-          <form class="hero-card-form reveal" id="hero-card-form" onsubmit="return false;">
-            <div class="form-field">
-              <label for="hero-name">Nome do herói</label>
-              <input type="text" id="hero-name" name="hero-name" maxlength="24" value="Thor" autocomplete="off" />
+        <div class="services__grid">
+          <article class="service-card reveal">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" fill="#E8F0FC"/><path d="M14 28c3-2 6-2 10 0s7 2 10 0" stroke="#1F5FBF" stroke-width="2.2" stroke-linecap="round"/><path d="M16 20c2.5-3 5-4.5 8-4.5S29.5 17 32 20" stroke="#F4C430" stroke-width="2.2" stroke-linecap="round"/><circle cx="24" cy="30" r="2" fill="#F4C430"/></svg>
             </div>
+            <h3>Banho</h3>
+            <p>Higienização delicada, produtos hipoalergênicos e secagem profissional no conforto do pet.</p>
+            <a class="service-card__link" href="#agendar" data-book-service="Banho">Agendar banho →</a>
+          </article>
 
-            <div class="form-field">
-              <label for="hero-species">Espécie</label>
-              <select id="hero-species" name="hero-species">
-                <option value="cao" selected>Cão</option>
-                <option value="gato">Gato</option>
-                <option value="outro">Outro pet</option>
-              </select>
+          <article class="service-card reveal">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" fill="#E8F0FC"/><path d="M16 18l16 12M20 16l12 16" stroke="#1F5FBF" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="18" r="3" fill="#F4C430"/><circle cx="32" cy="30" r="3" fill="#F4C430"/></svg>
             </div>
+            <h3>Tosa</h3>
+            <p>Tosa higiênica ou estética com técnicas modernas, respeitando a raça e o bem-estar.</p>
+            <a class="service-card__link" href="#agendar" data-book-service="Tosa">Agendar tosa →</a>
+          </article>
 
-            <div class="form-field">
-              <label for="hero-size">Porte / classe de poder</label>
-              <select id="hero-size" name="hero-size">
-                <option value="pequeno">Pequeno — Velocidade sônica</option>
-                <option value="medio" selected>Médio — Força estratégica</option>
-                <option value="grande">Grande — Poder de impacto</option>
-                <option value="gigante">Gigante — Força titânica</option>
-              </select>
+          <article class="service-card reveal">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" fill="#E8F0FC"/><path d="M24 14v20M14 24h20" stroke="#1F5FBF" stroke-width="2.6" stroke-linecap="round"/><rect x="18" y="18" width="12" height="12" rx="3" stroke="#F4C430" stroke-width="2"/></svg>
             </div>
+            <h3>Veterinário</h3>
+            <p>Consultas clínicas com avaliação completa, orientação preventiva e acompanhamento contínuo.</p>
+            <a class="service-card__link" href="#agendar" data-book-service="Consulta veterinária">Agendar consulta →</a>
+          </article>
 
-            <div class="form-field">
-              <label for="hero-power">Poder customizado (opcional)</label>
-              <input type="text" id="hero-power" name="hero-power" maxlength="40" placeholder="Ex: destruidor de chinelos" />
+          <article class="service-card reveal">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" fill="#E8F0FC"/><path d="M18 28c0-4 2.5-7 6-7s6 3 6 7v4H18v-4z" stroke="#1F5FBF" stroke-width="2"/><path d="M22 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0z" fill="#F4C430"/><path d="M20 32h8" stroke="#F4C430" stroke-width="2" stroke-linecap="round"/></svg>
             </div>
+            <h3>Vacinação</h3>
+            <p>Protocolos atualizados, carteira de vacinação em dia e lembrete das próximas doses.</p>
+            <a class="service-card__link" href="#agendar" data-book-service="Vacinação">Agendar vacina →</a>
+          </article>
 
-            <div class="form-field">
-              <span class="label" id="avatar-label">Foto ou avatar</span>
-              <div class="avatar-picker" role="group" aria-labelledby="avatar-label">
-                <button type="button" class="avatar-option" data-avatar="assets/img/pet-avatar-1.png" aria-label="Avatar geométrico 1">
-                  <img src="assets/img/pet-avatar-1.png" alt="" width="64" height="64" />
-                </button>
-                <button type="button" class="avatar-option" data-avatar="assets/img/pet-avatar-2.png" aria-label="Avatar geométrico 2">
-                  <img src="assets/img/pet-avatar-2.png" alt="" width="64" height="64" />
-                </button>
-                <button type="button" class="avatar-option" data-avatar="assets/img/pet-avatar-3.png" aria-label="Avatar geométrico 3">
-                  <img src="assets/img/pet-avatar-3.png" alt="" width="64" height="64" />
-                </button>
-                <label class="upload-btn">
-                  Subir foto
-                  <input type="file" id="hero-photo" accept="image/*" />
-                </label>
+          <article class="service-card reveal">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" fill="#E8F0FC"/><ellipse cx="24" cy="26" rx="10" ry="6" stroke="#1F5FBF" stroke-width="2"/><path d="M14 24c2-6 6-9 10-9s8 3 10 9" stroke="#F4C430" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="26" r="2" fill="#F4C430"/></svg>
+            </div>
+            <h3>Produtos</h3>
+            <p>Rações, petiscos, higiene e acessórios selecionados com curadoria de qualidade premium.</p>
+            <a class="service-card__link" href="#agendar" data-book-service="Produtos / encomenda">Consultar produtos →</a>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" fill="#E8F0FC"/><rect x="12" y="20" width="20" height="10" rx="2" stroke="#1F5FBF" stroke-width="2"/><path d="M32 24h4l2 4v2h-6" stroke="#F4C430" stroke-width="2" stroke-linejoin="round"/><circle cx="18" cy="32" r="2.5" fill="#F4C430"/><circle cx="34" cy="32" r="2.5" fill="#F4C430"/></svg>
+            </div>
+            <h3>Leva e traz</h3>
+            <p>Transporte seguro e pontual para o seu pet, com conforto e acompanhamento em cada etapa.</p>
+            <a class="service-card__link" href="#agendar" data-book-service="Leva e traz">Solicitar leva e traz →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== DIFERENCIAIS ========== -->
+    <section class="section differentials" id="sobre" aria-labelledby="diff-title">
+      <div class="container">
+        <header class="section-head section-head--center reveal">
+          <p class="eyebrow">Por que nos escolher</p>
+          <h2 id="diff-title">Diferenciais que geram confiança</h2>
+          <p class="section-head__text">
+            Cada detalhe do Super Pet Shop foi pensado para transmitir segurança,
+            limpeza e acolhimento — para tutores e para pets.
+          </p>
+        </header>
+
+        <div class="diff-grid">
+          <article class="diff-item reveal">
+            <div class="diff-item__circle" aria-hidden="true">❤️</div>
+            <h3>Atendimento humanizado</h3>
+            <p>Escuta ativa, paciência e cuidado individual com cada animal e cada tutor.</p>
+          </article>
+          <article class="diff-item reveal">
+            <div class="diff-item__circle" aria-hidden="true">🏆</div>
+            <h3>Equipe especializada</h3>
+            <p>Profissionais capacitados em estética animal e suporte clínico de confiança.</p>
+          </article>
+          <article class="diff-item reveal">
+            <div class="diff-item__circle" aria-hidden="true">🧼</div>
+            <h3>Ambiente higienizado</h3>
+            <p>Protocolos de limpeza contínuos para um espaço seguro e agradável.</p>
+          </article>
+          <article class="diff-item reveal">
+            <div class="diff-item__circle" aria-hidden="true">🌿</div>
+            <h3>Produtos de qualidade</h3>
+            <p>Seleção criteriosa de marcas e fórmulas que respeitam a pele e o pelo.</p>
+          </article>
+          <article class="diff-item reveal">
+            <div class="diff-item__circle" aria-hidden="true">📍</div>
+            <h3>Fácil localização</h3>
+            <p>Acesso prático, estacionamento próximo e horários pensados para a sua rotina.</p>
+          </article>
+          <article class="diff-item reveal">
+            <div class="diff-item__circle" aria-hidden="true">⭐</div>
+            <h3>Atendimento 5 estrelas</h3>
+            <p>Experiência premium avaliada com excelência por quem confia no nosso cuidado.</p>
+          </article>
+        </div>
+
+        <div class="about-panel reveal">
+          <div class="about-panel__media">
+            <img
+              src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=900&q=80"
+              alt="Dois cães brincando ao ar livre em um dia ensolarado"
+              width="900"
+              height="700"
+              loading="lazy"
+            />
+          </div>
+          <div class="about-panel__content">
+            <p class="eyebrow">Nossa essência</p>
+            <h3>Uma casa feita de confiança e carinho</h3>
+            <p>
+              O Super Pet Shop nasceu em Dom Aquino para ser o ponto de apoio de quem leva o pet a sério.
+              Unimos técnica, higiene e acolhimento para que cada visita seja tranquila — com
+              atendimento transparente, próximo e profissional.
+            </p>
+            <ul class="check-list">
+              <li>Av. Dom Bosco, 312 — Dom Aquino, Cuiabá</li>
+              <li>Banho, tosa e orientação no balcão</li>
+              <li>WhatsApp (65) 99304-3088</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== GALERIA ========== -->
+    <section class="section gallery" id="galeria" aria-labelledby="galeria-title">
+      <div class="container">
+        <header class="section-head section-head--center reveal">
+          <p class="eyebrow">Galeria</p>
+          <h2 id="galeria-title">Momentos de cuidado e felicidade</h2>
+          <p class="section-head__text">
+            Registros reais do dia a dia: banho, tosa e pets radiantes após o atendimento.
+          </p>
+        </header>
+
+        <div class="gallery__grid" data-gallery>
+          <button type="button" class="gallery__item reveal" data-lightbox-src="assets/img/gallery/gallery-1.jpg" data-lightbox-alt="Pet radiante após o atendimento no Super Pet Shop">
+            <img src="assets/img/gallery/gallery-1.jpg" alt="Pet radiante após o atendimento no Super Pet Shop" width="800" height="800" loading="lazy" />
+            <span class="gallery__overlay"><span>Ver foto</span></span>
+          </button>
+          <button type="button" class="gallery__item reveal" data-lightbox-src="assets/img/gallery/gallery-2.jpg" data-lightbox-alt="Momento de carinho e cuidado no Super Pet Shop">
+            <img src="assets/img/gallery/gallery-2.jpg" alt="Momento de carinho e cuidado no Super Pet Shop" width="800" height="800" loading="lazy" />
+            <span class="gallery__overlay"><span>Ver foto</span></span>
+          </button>
+          <button type="button" class="gallery__item reveal" data-lightbox-src="assets/img/gallery/gallery-3.jpg" data-lightbox-alt="Banho e tosa com acabamento impecável">
+            <img src="assets/img/gallery/gallery-3.jpg" alt="Banho e tosa com acabamento impecável" width="800" height="800" loading="lazy" />
+            <span class="gallery__overlay"><span>Ver foto</span></span>
+          </button>
+          <button type="button" class="gallery__item reveal" data-lightbox-src="assets/img/gallery/gallery-4.jpg" data-lightbox-alt="Cliente feliz após o cuidado no Super Pet Shop">
+            <img src="assets/img/gallery/gallery-4.jpg" alt="Cliente feliz após o cuidado no Super Pet Shop" width="800" height="800" loading="lazy" />
+            <span class="gallery__overlay"><span>Ver foto</span></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== DEPOIMENTOS (Google Maps) ========== -->
+    <section class="section testimonials" id="depoimentos" aria-labelledby="dep-title">
+      <div class="container">
+        <header class="section-head section-head--center reveal">
+          <p class="eyebrow">Google Maps</p>
+          <h2 id="dep-title">Avaliações de quem já visitou a loja</h2>
+          <p class="section-head__text">
+            Depoimentos públicos do nosso perfil no Google Maps — transparência e confiança.
+          </p>
+        </header>
+
+        <div class="google-reviews-panel reveal" data-google-reviews>
+          <div class="google-reviews-summary">
+            <div class="google-reviews-summary__brand">
+              <span class="google-g" aria-hidden="true">G</span>
+              <div>
+                <strong>Super Pet Shop no Google</strong>
+                <span>Av. Dom Bosco, 312 — Dom Aquino</span>
               </div>
             </div>
+            <div class="google-reviews-summary__score">
+              <p class="google-reviews-summary__rating" data-google-rating>—</p>
+              <p class="stars" data-google-stars aria-label="Avaliação no Google">★★★★★</p>
+              <p class="google-reviews-summary__count" data-google-count>Carregando avaliações…</p>
+            </div>
+            <a
+              class="btn btn--primary btn--sm"
+              href="https://maps.app.goo.gl/H5usvqyhv1wdFTNm7"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver no Google Maps
+            </a>
+          </div>
+
+          <div class="google-reviews-status" data-google-status role="status" aria-live="polite"></div>
+          <div class="testimonials__grid" data-google-reviews-grid>
+            <!-- Preenchido via JS a partir do Google Places / fallback -->
+          </div>
+
+          <div class="google-reviews-actions">
+            <a
+              class="btn btn--secondary"
+              href="https://maps.app.goo.gl/H5usvqyhv1wdFTNm7"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ler todas as avaliações no Google
+            </a>
+            <a
+              class="btn btn--primary"
+              href="https://search.google.com/local/writereview?placeid=ChIJB5fMaEaxnZMRYwx2RcDDMhE"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Deixar sua avaliação
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== AGENDAMENTO ========== -->
+    <section class="section booking" id="agendar" aria-labelledby="agendar-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Agendamento</p>
+          <h2 id="agendar-title">Agende banho, tosa ou consulta</h2>
+          <p class="section-head__text">
+            Preencha o formulário e envie direto no WhatsApp da loja.
+            Confirmamos horário e disponibilidade com você.
+          </p>
+        </header>
+
+        <div class="booking__grid">
+          <form class="booking-form reveal" id="booking-form" novalidate>
+            <div class="booking-form__row">
+              <div class="form-field">
+                <label for="bk-name">Seu nome *</label>
+                <input type="text" id="bk-name" name="name" required autocomplete="name" placeholder="Como devemos te chamar?" />
+                <span class="error" role="alert"></span>
+              </div>
+              <div class="form-field">
+                <label for="bk-phone">WhatsApp *</label>
+                <input type="tel" id="bk-phone" name="phone" required autocomplete="tel" inputmode="numeric" placeholder="(65) 99999-9999" />
+                <span class="error" role="alert"></span>
+              </div>
+            </div>
+
+            <div class="booking-form__row">
+              <div class="form-field">
+                <label for="bk-pet">Nome do pet *</label>
+                <input type="text" id="bk-pet" name="pet" required maxlength="40" placeholder="Ex: Thor" />
+                <span class="error" role="alert"></span>
+              </div>
+              <div class="form-field">
+                <label for="bk-species">Espécie *</label>
+                <select id="bk-species" name="species" required>
+                  <option value="">Selecione…</option>
+                  <option value="Cão">Cão</option>
+                  <option value="Gato">Gato</option>
+                  <option value="Outro">Outro</option>
+                </select>
+                <span class="error" role="alert"></span>
+              </div>
+            </div>
+
+            <div class="booking-form__row">
+              <div class="form-field">
+                <label for="bk-service">Serviço *</label>
+                <select id="bk-service" name="service" required>
+                  <option value="">Selecione…</option>
+                  <option value="Banho">Banho</option>
+                  <option value="Tosa">Tosa</option>
+                  <option value="Banho e tosa">Banho e tosa</option>
+                  <option value="Consulta veterinária">Consulta veterinária</option>
+                  <option value="Vacinação">Vacinação</option>
+                  <option value="Leva e traz">Leva e traz</option>
+                  <option value="Produtos / encomenda">Produtos / encomenda</option>
+                  <option value="Outro">Outro</option>
+                </select>
+                <span class="error" role="alert"></span>
+              </div>
+              <div class="form-field">
+                <label for="bk-size">Porte do pet</label>
+                <select id="bk-size" name="size">
+                  <option value="Não informado">Prefiro não informar</option>
+                  <option value="Pequeno">Pequeno</option>
+                  <option value="Médio">Médio</option>
+                  <option value="Grande">Grande</option>
+                  <option value="Gigante">Gigante</option>
+                </select>
+                <span class="error" role="alert"></span>
+              </div>
+            </div>
+
+            <div class="booking-form__row">
+              <div class="form-field">
+                <label for="bk-date">Data preferida *</label>
+                <input type="date" id="bk-date" name="date" required />
+                <span class="error" role="alert"></span>
+              </div>
+              <div class="form-field">
+                <label for="bk-time">Período preferido *</label>
+                <select id="bk-time" name="time" required>
+                  <option value="">Selecione…</option>
+                  <option value="Manhã (08h–12h)">Manhã (08h–12h)</option>
+                  <option value="Tarde (12h–18h)">Tarde (12h–18h)</option>
+                  <option value="Sábado manhã (08h–12h)">Sábado manhã (08h–12h)</option>
+                  <option value="Sábado até 14h">Sábado até 14h</option>
+                  <option value="Flexível / o quanto antes">Flexível / o quanto antes</option>
+                </select>
+                <span class="error" role="alert"></span>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="bk-notes">Observações</label>
+              <textarea id="bk-notes" name="notes" maxlength="600" placeholder="Alergias, preferências de tosa, necessidade de leva e traz…"></textarea>
+              <span class="error" role="alert"></span>
+            </div>
+
+            <button type="submit" class="btn btn--whatsapp btn--lg btn--full">
+              Enviar agendamento no WhatsApp
+            </button>
+            <p class="booking-form__hint" id="booking-status" role="status" aria-live="polite">
+              Horário de atendimento: Seg–Sex 08h–18h · Sáb 08h–14h
+            </p>
           </form>
 
-          <div class="hero-card-preview-wrap reveal">
-            <div class="hero-card-canvas-frame">
-              <canvas id="hero-card-canvas" width="720" height="960" role="img" aria-label="Pré-visualização do cartão de herói"></canvas>
+          <aside class="booking-aside reveal">
+            <div class="booking-aside__card">
+              <h3>Como funciona</h3>
+              <ol class="booking-steps">
+                <li><strong>1.</strong> Você preenche o formulário</li>
+                <li><strong>2.</strong> Abrimos o WhatsApp com a mensagem pronta</li>
+                <li><strong>3.</strong> Nossa equipe confirma o horário</li>
+              </ol>
             </div>
-            <div class="hero-card-actions">
-              <button type="button" class="btn btn--volt" data-download-card>Baixar cartão PNG</button>
-              <button type="button" class="btn btn--outline" data-share-card>Compartilhar no WhatsApp</button>
+            <div class="booking-aside__card">
+              <h3>Contato direto</h3>
+              <p>
+                <a href="https://wa.me/5565993043088" target="_blank" rel="noopener noreferrer">(65) 99304-3088</a><br />
+                Av. Dom Bosco, 312 — Dom Aquino
+              </p>
+              <a class="btn btn--secondary btn--sm" href="https://maps.app.goo.gl/H5usvqyhv1wdFTNm7" target="_blank" rel="noopener noreferrer">
+                Ver no Google Maps
+              </a>
             </div>
-          </div>
+            <div class="booking-aside__card booking-aside__card--gold">
+              <h3>Dica</h3>
+              <p>Para banho e tosa, informe o porte e se o pet tem alguma sensibilidade de pele ou medo de secador.</p>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
 
-    <!-- ========== CATEGORIAS ========== -->
-    <section class="section section--paper" id="categorias" aria-labelledby="cat-title">
-      <div class="container">
-        <header class="section-head reveal">
-          <p class="label section-head__kicker">Arsenal</p>
-          <h2 class="section-head__title" id="cat-title">Escolha a linha de frente</h2>
-          <p class="section-head__text">
-            Quatro frentes de batalha no dia a dia do tutor: nutrição, felinos, higiene e equipamentos.
-            Sem clipart de pata — só o essencial, com moldura de painel.
-          </p>
-        </header>
-
-        <div class="cat-grid">
-          <a class="cat-card reveal" href="produtos.html?cat=caes">
-            <span class="cat-card__icon" aria-hidden="true">
-              <!-- SVG angular cão — silhueta geométrica, não pata -->
-              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M6 22 V14 L10 8 L14 12 L18 8 L22 12 L26 10 V20 L22 26 H10 Z" />
-                <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none" />
-                <circle cx="20" cy="16" r="1.5" fill="currentColor" stroke="none" />
-                <path d="M4 12 L6 14 M28 12 L26 14" />
-              </svg>
-            </span>
-            <span>
-              <span class="cat-card__title">Cães</span>
-              <span class="cat-card__text">Ração, petiscos e brinquedos de impacto.</span>
-            </span>
-            <span class="cat-card__arrow" aria-hidden="true">→</span>
-          </a>
-
-          <a class="cat-card reveal" href="produtos.html?cat=gatos">
-            <span class="cat-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M8 24 V14 L12 6 L16 12 L20 6 L24 14 V24 Z" />
-                <path d="M13 17 H13.1 M19 17 H19.1" stroke-linecap="round" stroke-width="3" />
-                <path d="M14 21 H18" />
-              </svg>
-            </span>
-            <span>
-              <span class="cat-card__title">Gatos</span>
-              <span class="cat-card__text">Nutrição indoor, areia e arranhadores.</span>
-            </span>
-            <span class="cat-card__arrow" aria-hidden="true">→</span>
-          </a>
-
-          <a class="cat-card reveal" href="produtos.html?cat=higiene">
-            <span class="cat-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 6 H20 V12 C24 14 26 18 26 22 C26 26 22 28 16 28 C10 28 6 26 6 22 C6 18 8 14 12 12 Z" />
-                <path d="M14 6 V3 H18 V6" />
-              </svg>
-            </span>
-            <span>
-              <span class="cat-card__title">Higiene</span>
-              <span class="cat-card__text">Shampoo, antipulgas e kit de banho.</span>
-            </span>
-            <span class="cat-card__arrow" aria-hidden="true">→</span>
-          </a>
-
-          <a class="cat-card reveal" href="produtos.html?cat=acessorios">
-            <span class="cat-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="6" y="10" width="20" height="14" rx="1" />
-                <path d="M10 10 V8 C10 6 12 5 16 5 C20 5 22 6 22 8 V10" />
-                <path d="M12 17 H20" />
-              </svg>
-            </span>
-            <span>
-              <span class="cat-card__title">Acessórios</span>
-              <span class="cat-card__text">Peitorais, camas e comedouros táticos.</span>
-            </span>
-            <span class="cat-card__arrow" aria-hidden="true">→</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== PRODUTOS DESTAQUE ========== -->
-    <section class="section section--ink" id="produtos" aria-labelledby="prod-title">
-      <div class="container">
-        <header class="section-head reveal">
-          <p class="label section-head__kicker">Vitrine</p>
-          <h2 class="section-head__title" id="prod-title">Em destaque no QG</h2>
-          <p class="section-head__text">
-            Seleção do que mais sai da prateleira em Dom Aquino. Preços em reais, nomes reais —
-            sem “Produto 1”. O carrinho monta o pedido e manda direto no WhatsApp da loja.
-          </p>
-        </header>
-
-        <div class="product-toolbar reveal">
-          <div class="filters" role="group" aria-label="Filtrar destaques">
-            <button type="button" class="filter-btn is-active" data-filter="all" aria-pressed="true">Todos</button>
-            <button type="button" class="filter-btn" data-filter="caes" aria-pressed="false">Cães</button>
-            <button type="button" class="filter-btn" data-filter="gatos" aria-pressed="false">Gatos</button>
-            <button type="button" class="filter-btn" data-filter="higiene" aria-pressed="false">Higiene</button>
-            <button type="button" class="filter-btn" data-filter="acessorios" aria-pressed="false">Acessórios</button>
-          </div>
-          <a class="btn btn--outline btn--sm" href="produtos.html">Catálogo completo →</a>
-        </div>
-
-        <div class="product-grid" data-product-grid data-featured="true" data-limit="6"></div>
-      </div>
-    </section>
-
-    <!-- ========== SERVIÇOS / PODERES ========== -->
-    <section class="section section--paper diagonal-top" id="servicos" aria-labelledby="serv-title">
-      <div class="container">
-        <header class="section-head reveal">
-          <p class="label section-head__kicker">Poderes desbloqueados</p>
-          <h2 class="section-head__title" id="serv-title">Três habilidades do Super Pet Shop</h2>
-          <p class="section-head__text">
-            Cada serviço é um poder que o herói (e o tutor) usam no mundo real.
-            Agendamento em um toque — vai direto para o WhatsApp da equipe.
-          </p>
-        </header>
-
-        <div class="powers-grid">
-          <article class="power-card reveal">
-            <p class="power-card__num">01</p>
-            <h3 class="power-card__title">Banho &amp; Tosa</h3>
-            <p class="power-card__text">
-              Limpeza de combate: higienização, secagem profissional e tosa higiênica ou completa.
-              Ideal antes de viagens, festas ou só porque o pelo pediu trégua.
-            </p>
-            <div class="power-card__meta">
-              <span class="badge badge--volt">Cães &amp; gatos</span>
-              <span class="badge badge--paper">Horário sob consulta</span>
-            </div>
-            <a class="btn btn--volt" data-schedule="banho e tosa" href="https://wa.me/5565993043088" target="_blank" rel="noopener noreferrer">
-              Agendar no WhatsApp
-            </a>
-          </article>
-
-          <article class="power-card reveal">
-            <p class="power-card__num">02</p>
-            <h3 class="power-card__title">Cuidados &amp; Farmácia</h3>
-            <p class="power-card__text">
-              Antipulgas, vermífugos e orientação de prateleira para o dia a dia.
-              Quando for vacina ou procedimento clínico, a gente indica o caminho certo — sem enrolação.
-            </p>
-            <div class="power-card__meta">
-              <span class="badge badge--blaze">Urgente — saúde</span>
-              <span class="badge badge--paper">Retire na loja</span>
-            </div>
-            <a class="btn btn--volt" data-schedule="orientação de produtos de saúde" href="https://wa.me/5565993043088" target="_blank" rel="noopener noreferrer">
-              Falar no WhatsApp
-            </a>
-          </article>
-
-          <article class="power-card reveal">
-            <p class="power-card__num">03</p>
-            <h3 class="power-card__title">Base de operações</h3>
-            <p class="power-card__text">
-              Retire ração, recarregue o kit do mês e tire dúvida com quem está atrás do balcão —
-              gente que conhece o bairro e o peso do saco de 15 kg.
-            </p>
-            <div class="power-card__meta">
-              <span class="badge badge--volt">Dom Aquino</span>
-              <span class="badge badge--paper">Seg–Sáb</span>
-            </div>
-            <a class="btn btn--volt" href="#contato">Como chegar</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== DEPOIMENTOS ========== -->
-    <section class="section section--ink" id="depoimentos" aria-labelledby="dep-title">
-      <div class="container">
-        <header class="section-head reveal">
-          <p class="label section-head__kicker">Prova social</p>
-          <h2 class="section-head__title" id="dep-title">Transmissões do campo</h2>
-          <p class="section-head__text">Tutores de Cuiabá e região que já passaram pelo QG.</p>
-        </header>
-
-        <div class="testimonials-grid">
-          <blockquote class="testimonial reveal">
-            <p class="testimonial__stars" aria-label="5 de 5 estrelas">★★★★★</p>
-            <p class="testimonial__quote">
-              “Levei a Luna pro banho numa sexta e ela voltou cheirosa, sem stress.
-              Agendei pelo WhatsApp em dois minutos — do jeito que tem que ser.”
-            </p>
-            <footer class="testimonial__author">
-              <img src="assets/img/avatar-1.png" alt="" width="48" height="48" loading="lazy" />
-              <div>
-                <p class="testimonial__name">Camila R.</p>
-                <p class="testimonial__pet">Tutora da Luna · Shih Tzu</p>
-              </div>
-            </footer>
-          </blockquote>
-
-          <blockquote class="testimonial reveal">
-            <p class="testimonial__stars" aria-label="5 de 5 estrelas">★★★★★</p>
-            <p class="testimonial__quote">
-              “Troquei a ração do Max aqui e o time ajudou a calcular a quantidade certa pro porte.
-              Nada de empurrar o saco mais caro — recomendaram o que fazia sentido.”
-            </p>
-            <footer class="testimonial__author">
-              <img src="assets/img/avatar-2.png" alt="" width="48" height="48" loading="lazy" />
-              <div>
-                <p class="testimonial__name">Rafael M.</p>
-                <p class="testimonial__pet">Tutor do Max · SRD médio</p>
-              </div>
-            </footer>
-          </blockquote>
-
-          <blockquote class="testimonial reveal">
-            <p class="testimonial__stars" aria-label="5 de 5 estrelas">★★★★★</p>
-            <p class="testimonial__quote">
-              “O cartão de herói da Mimi viralizou no grupo da família.
-              A loja em si é organizada e o atendimento não tem aquela vibe infantil de petshop genérico.”
-            </p>
-            <footer class="testimonial__author">
-              <img src="assets/img/avatar-3.png" alt="" width="48" height="48" loading="lazy" />
-              <div>
-                <p class="testimonial__name">Juliana P.</p>
-                <p class="testimonial__pet">Tutora da Mimi · Gata SRD</p>
-              </div>
-            </footer>
-          </blockquote>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== SOBRE ========== -->
-    <section class="section section--ink halftone" id="sobre" aria-labelledby="sobre-title">
-      <div class="container about-grid">
-        <div class="about-copy reveal">
-          <p class="label section-head__kicker">Sobre o QG</p>
-          <h2 class="section-head__title" id="sobre-title">Super não é slogan. É o padrão.</h2>
+    <!-- ========== CTA FINAL ========== -->
+    <section class="cta" id="cta" aria-labelledby="cta-title">
+      <div class="container cta__grid">
+        <div class="cta__copy reveal">
+          <p class="eyebrow eyebrow--light">Agende com carinho</p>
+          <h2 id="cta-title">Seu melhor amigo merece esse carinho.</h2>
           <p>
-            O Super Pet Shop nasceu em Dom Aquino para ser o ponto de apoio de quem leva o pet a sério —
-            sem dramatizar e sem infantilizar. Aqui o banho tem horário, a ração tem nome de marca de verdade
-            e o WhatsApp responde com o que dá para fazer hoje, não com um script de call center.
+            Horários flexíveis, equipe preparada e um ambiente pensado para o bem-estar
+            do seu pet. Reserve o melhor momento agora.
           </p>
-          <p>
-            A gente trata cada animal como o personagem principal da casa: peitoral que segura no passeio,
-            shampoo que não arde o olho, tosa que respeita o clima de Cuiabá. Se precisar de algo que
-            não está na prateleira, fala com a gente — montamos o pedido e avisamos quando chegar.
-          </p>
+          <a class="btn btn--dark btn--lg" href="#agendar">
+            Agendar agora
+          </a>
         </div>
-        <div class="about-stats reveal">
-          <div class="stat">
-            <p class="stat__value">312</p>
-            <p class="stat__label">Av. Dom Bosco</p>
-          </div>
-          <div class="stat">
-            <p class="stat__value">65</p>
-            <p class="stat__label">DDD Cuiabá</p>
-          </div>
-          <div class="stat">
-            <p class="stat__value">HQ</p>
-            <p class="stat__label">Estética de capa</p>
-          </div>
-          <div class="stat">
-            <p class="stat__value">24/7</p>
-            <p class="stat__label">WhatsApp na mira</p>
-          </div>
-        </div>
+        <figure class="cta__photo reveal">
+          <img
+            src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=1000&q=80"
+            alt="Cachorro feliz sorrindo após o cuidado no pet shop"
+            width="1000"
+            height="900"
+            loading="lazy"
+          />
+        </figure>
       </div>
     </section>
 
     <!-- ========== CONTATO ========== -->
-    <section class="section section--ink" id="contato" aria-labelledby="contato-title">
+    <section class="section contact" id="contato" aria-labelledby="contato-title">
       <div class="container">
         <header class="section-head reveal">
-          <p class="label section-head__kicker">Comunicação</p>
-          <h2 class="section-head__title" id="contato-title">Fale com a base</h2>
+          <p class="eyebrow">Contato</p>
+          <h2 id="contato-title">Venha nos visitar</h2>
           <p class="section-head__text">
-            Prefere WhatsApp? A gente também. O formulário monta a mensagem e abre o canal que você escolher —
-            sem falso “enviado com sucesso”.
+            Estamos prontos para receber você e o seu pet com toda a atenção que merecem.
           </p>
         </header>
 
-        <div class="contact-grid">
-          <div class="contact-info reveal">
-            <div class="contact-block">
+        <div class="contact__grid">
+          <div class="contact__cards reveal">
+            <article class="info-card glass">
               <h3>Endereço</h3>
               <p>
                 Av. Dom Bosco, Nº 312<br />
                 Dom Aquino — Cuiabá, MT<br />
                 CEP 78015-180
               </p>
-              <p class="mt-4">
-                <a href="https://maps.app.goo.gl/q877E9EMePEubVwVA" target="_blank" rel="noopener noreferrer">
-                  Abrir no Google Maps →
-                </a>
+              <p style="margin-top: 0.65rem">
+                <a href="https://maps.app.goo.gl/H5usvqyhv1wdFTNm7" target="_blank" rel="noopener noreferrer">Abrir no Google Maps →</a>
               </p>
-            </div>
-            <div class="contact-block">
+            </article>
+            <article class="info-card glass">
               <h3>WhatsApp / Telefone</h3>
-              <p>
-                <a href="https://wa.me/5565993043088" target="_blank" rel="noopener noreferrer">(65) 99304-3088</a>
-              </p>
-            </div>
-            <div class="contact-block">
+              <p><a href="https://wa.me/5565993043088" target="_blank" rel="noopener noreferrer">(65) 99304-3088</a></p>
+            </article>
+            <article class="info-card glass">
+              <h3>Instagram</h3>
+              <p><a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">@superpetshop</a></p>
+            </article>
+            <article class="info-card glass">
               <h3>Horário</h3>
               <p>
                 Segunda a sexta: 08h – 18h<br />
                 Sábado: 08h – 14h<br />
                 Domingo: fechado
               </p>
-            </div>
-            <a class="btn btn--volt" data-schedule="atendimento geral" href="https://wa.me/5565993043088" target="_blank" rel="noopener noreferrer">
-              Chamar no WhatsApp
-            </a>
+            </article>
           </div>
 
-          <form class="contact-form reveal" id="contact-form" novalidate>
-            <div class="form-field">
-              <label for="name">Nome</label>
-              <input type="text" id="name" name="name" required autocomplete="name" />
-              <span class="error" role="alert"></span>
-            </div>
-            <div class="form-field">
-              <label for="email">E-mail</label>
-              <input type="email" id="email" name="email" required autocomplete="email" />
-              <span class="error" role="alert"></span>
-            </div>
-            <div class="form-field">
-              <label for="phone">Telefone / WhatsApp</label>
-              <input type="tel" id="phone" name="phone" required autocomplete="tel" inputmode="numeric" placeholder="(65) 99999-9999" />
-              <span class="error" role="alert"></span>
-            </div>
-            <div class="form-field">
-              <label for="subject">Assunto</label>
-              <select id="subject" name="subject" required>
-                <option value="">Selecione…</option>
-                <option value="Agendamento banho e tosa">Agendamento banho e tosa</option>
-                <option value="Dúvida sobre produto">Dúvida sobre produto</option>
-                <option value="Pedido / encomenda">Pedido / encomenda</option>
-                <option value="Outro">Outro</option>
-              </select>
-              <span class="error" role="alert"></span>
-            </div>
-            <div class="form-field">
-              <label for="message">Mensagem</label>
-              <textarea id="message" name="message" required maxlength="1200" placeholder="Conte o nome do pet, o serviço ou o produto que procura…"></textarea>
-              <span class="error" role="alert"></span>
-            </div>
-            <div class="form-field">
-              <label for="channel">Enviar via</label>
-              <select id="channel" name="channel">
-                <option value="whatsapp" selected>WhatsApp da loja (recomendado)</option>
-                <option value="email">E-mail (abre seu app de e-mail)</option>
-              </select>
-              <span class="error" role="alert"></span>
-            </div>
-            <button type="submit" class="btn btn--volt btn--full">Preparar mensagem</button>
-            <p id="form-status" class="label" role="status" aria-live="polite"></p>
-          </form>
-        </div>
-
-        <div class="map-wrap reveal">
-          <!-- Mapa: Super Pet Shop, Av. Dom Bosco 312, Dom Aquino, Cuiabá-MT -->
-          <iframe
-            title="Mapa — Super Pet Shop em Dom Aquino, Cuiabá"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://maps.google.com/maps?q=Super+Pet+Shop+Av.+Dom+Bosco+312+Dom+Aquino+Cuiab%C3%A1&z=16&output=embed"
-            allowfullscreen
-          ></iframe>
+          <div class="contact__map reveal">
+            <iframe
+              title="Mapa — Super Pet Shop em Dom Aquino, Cuiabá"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Super+Pet+Shop,+Av.+Dom+Bosco,+312,+Dom+Aquino,+Cuiab%C3%A1&z=16&hl=pt-BR&output=embed"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <!-- ========== FOOTER ========== -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="assets/img/logo.png" alt="Super Pet Shop" width="200" height="96" loading="lazy" />
-          <p>
-            Pet shop em Dom Aquino, Cuiabá. Banho, tosa e arsenal para cães e gatos —
-            com a estética de quem trata o pet como herói, não como mascote de folder.
-          </p>
-          <div class="socials">
-            <a href="https://wa.me/5565993043088" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 2.1 17.2L1 23l5.9-1.1A11 11 0 0 0 12 23a11 11 0 0 0 8.5-19.5zM12 21a9 9 0 0 1-4.6-1.3l-.3-.2-3.5.7.7-3.4-.2-.3A9 9 0 1 1 12 21zm5-6.7c-.3-.1-1.6-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.7-2.8-1.3-3.9-3-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.2.2-1.3 0-.1-.2-.2-.5-.3z"/></svg>
-            </a>
-            <a href="https://maps.app.goo.gl/q877E9EMePEubVwVA" target="_blank" rel="noopener noreferrer" aria-label="Google Maps">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <div class="footer-col">
-          <h3>Navegação</h3>
-          <ul>
-            <li><a href="#inicio">Início</a></li>
-            <li><a href="produtos.html">Produtos</a></li>
-            <li><a href="#cartao-heroi">Cartão de Herói</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#contato">Contato</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h3>Serviços</h3>
-          <ul>
-            <li><a data-schedule="banho e tosa" href="https://wa.me/5565993043088" target="_blank" rel="noopener noreferrer">Banho e tosa</a></li>
-            <li><a href="produtos.html">Vitrine de produtos</a></li>
-            <li><a data-schedule="orientação de produtos" href="https://wa.me/5565993043088" target="_blank" rel="noopener noreferrer">Orientação no balcão</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h3>Horário</h3>
-          <ul class="footer-hours">
-            <li><span>Seg – Sex</span><span>08h – 18h</span></li>
-            <li><span>Sábado</span><span>08h – 14h</span></li>
-            <li><span>Domingo</span><span>Fechado</span></li>
-          </ul>
-        </div>
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a class="logo logo--footer" href="#inicio" aria-label="Super Pet Shop — início">
+          <img src="assets/img/logo.png" alt="Super Pet Shop — Banho &amp; Tosa" width="280" height="100" loading="lazy" />
+        </a>
+        <p>
+          Pet shop em Dom Aquino, Cuiabá. Banho, tosa e produtos para cães e gatos —
+          com atendimento próximo e cuidado de verdade.
+        </p>
       </div>
 
-      <div class="footer-bottom">
-        <p>© <span data-year></span> Super Pet Shop. Dom Aquino, Cuiabá-MT.</p>
-        <p>Seu pet. Herói de verdade.</p>
+      <div class="footer__col">
+        <h3>Navegação</h3>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#agendar">Agendar</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
       </div>
+
+      <div class="footer__col">
+        <h3>Contato</h3>
+        <ul>
+          <li><a href="https://wa.me/5565993043088" target="_blank" rel="noopener noreferrer">(65) 99304-3088</a></li>
+          <li><a href="https://maps.app.goo.gl/H5usvqyhv1wdFTNm7" target="_blank" rel="noopener noreferrer">Google Maps</a></li>
+          <li>Av. Dom Bosco, 312 — Dom Aquino</li>
+          <li>Seg–Sex 08h–18h · Sáb 08h–14h</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span data-year></span> Super Pet Shop. Dom Aquino, Cuiabá-MT.</p>
+      <p>O melhor cuidado para quem faz parte da sua família.</p>
     </div>
   </footer>
-
-  <!-- Carrinho -->
-  <div class="cart-drawer-overlay" id="cart-overlay" data-close-cart></div>
-  <aside class="cart-drawer" id="cart-drawer" aria-label="Carrinho" aria-hidden="true">
-    <div class="cart-drawer__head">
-      <h2>Arsenal</h2>
-      <button type="button" class="btn btn--ghost" data-close-cart aria-label="Fechar carrinho">✕</button>
-    </div>
-    <div class="cart-drawer__body" id="cart-drawer-body"></div>
-    <div class="cart-drawer__foot">
-      <div class="cart-total">
-        <span>Total</span>
-        <span id="cart-total-value">R$&nbsp;0,00</span>
-      </div>
-      <button type="button" class="btn btn--volt btn--full" data-checkout>Pedir no WhatsApp</button>
-      <p class="label text-center" style="color: var(--ink-60)">Sem pagamento online — pedido vai pro WhatsApp da loja.</p>
-    </div>
-  </aside>
 
   <!-- WhatsApp flutuante -->
   <a
     class="wa-float"
-    data-schedule="banho e tosa"
-    href="https://wa.me/5565993043088?text=Ol%C3%A1%2C%20Super%20Pet%20Shop!%20Quero%20agendar%20*banho%20e%20tosa*."
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Agendar banho e tosa no WhatsApp"
+    href="#agendar"
+    aria-label="Ir para agendamento"
   >
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 2.1 17.2L1 23l5.9-1.1A11 11 0 0 0 12 23a11 11 0 0 0 8.5-19.5zM12 21a9 9 0 0 1-4.6-1.3l-.3-.2-3.5.7.7-3.4-.2-.3A9 9 0 1 1 12 21zm5-6.7c-.3-.1-1.6-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.7-2.8-1.3-3.9-3-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.2.2-1.3 0-.1-.2-.2-.5-.3z"/></svg>
-    <span>Agendar no WhatsApp</span>
   </a>
 
-  <script src="assets/js/products.js" defer></script>
-  <script src="assets/js/nav.js" defer></script>
-  <script src="assets/js/hero-card.js" defer></script>
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Visualização da foto">
+    <button type="button" class="lightbox__close" data-lightbox-close aria-label="Fechar">✕</button>
+    <img src="" alt="" id="lightbox-img" />
+  </div>
+
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/google-reviews.js" defer></script>
+  <script src="assets/js/booking.js" defer></script>
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>

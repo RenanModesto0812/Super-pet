@@ -1,0 +1,11 @@
+{
+  "placeId": "ChIJB5fMaEaxnZMRYwx2RcDDMhE",
+  "mapsUrl": "https://maps.app.goo.gl/H5usvqyhv1wdFTNm7",
+  "name": "Super Pet Shop",
+  "address": "Av. Dom Bosco, Nº 312 - Dom Aquino, Cuiabá - MT, 78015-180",
+  "rating": null,
+  "userRatingsTotal": null,
+  "updatedAt": null,
+  "note": "Preencha com Places API (scripts/update_google_reviews.py) ou cole a GOOGLE_PLACES_API_KEY em assets/js/config.js para carregar ao vivo.",
+  "reviews": []
+}

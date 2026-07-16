@@ -1,13 +1,13 @@
 /**
- * Super Pet Shop — Main: scroll reveal, formulário de contato, utilitários
+ * Super Pet Shop — Interactions
+ * Navbar, mobile menu, scroll reveal, lightbox, parallax, year
+ * Pure JavaScript (no frameworks)
  */
 
 (function () {
   "use strict";
 
-  const WA_NUMBER = "5565993043088";
-  const CONTACT_EMAIL = "contato@superpetshop.com.br";
-
+  /* ---------- Helpers ---------- */
   function ready(fn) {
     if (document.readyState === "loading") {
       document.addEventListener("DOMContentLoaded", fn);
@@ -16,14 +16,96 @@
     }
   }
 
-  /* ---------- Scroll reveal (Intersection Observer) ---------- */
-  let revealObserver = null;
+  function prefersReducedMotion() {
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
 
-  function observeReveals(root) {
-    const nodes = (root || document).querySelectorAll(".reveal:not(.is-visible)");
+  /* ---------- Navbar scroll state ---------- */
+  function setupNavbar() {
+    const navbar = document.querySelector("[data-navbar]");
+    if (!navbar) return;
+
+    const onScroll = () => {
+      navbar.classList.toggle("is-scrolled", window.scrollY > 24);
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
+  /* ---------- Mobile navigation ---------- */
+  function setupMobileNav() {
+    const toggle = document.getElementById("nav-toggle");
+    const panel = document.getElementById("nav-panel");
+    if (!toggle || !panel) return;
+
+    const links = panel.querySelectorAll("a");
+
+    function setOpen(open) {
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      panel.classList.toggle("is-open", open);
+      panel.setAttribute("aria-hidden", open ? "false" : "true");
+      document.body.classList.toggle("nav-open", open);
+    }
+
+    toggle.addEventListener("click", () => {
+      const open = toggle.getAttribute("aria-expanded") !== "true";
+      setOpen(open);
+    });
+
+    links.forEach((link) => {
+      link.addEventListener("click", () => setOpen(false));
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") setOpen(false);
+    });
+  }
+
+  /* ---------- Active nav link on scroll ---------- */
+  function setupActiveNav() {
+    const sections = document.querySelectorAll("main section[id]");
+    const navLinks = document.querySelectorAll(".nav__link");
+    if (!sections.length || !navLinks.length) return;
+
+    const map = new Map();
+    navLinks.forEach((link) => {
+      const href = link.getAttribute("href") || "";
+      if (href.startsWith("#")) map.set(href.slice(1), link);
+    });
+
+    if (!("IntersectionObserver" in window)) return;
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const id = entry.target.id;
+          navLinks.forEach((l) => l.classList.remove("is-active"));
+          map.get(id)?.classList.add("is-active");
+        });
+      },
+      { rootMargin: "-40% 0px -50% 0px", threshold: 0 }
+    );
+
+    sections.forEach((section) => io.observe(section));
+  }
+
+  /* ---------- Scroll Reveal (Intersection Observer) ---------- */
+  function setupReveal() {
+    const nodes = document.querySelectorAll(".reveal");
     if (!nodes.length) return;
 
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    // Stagger cards in grids automatically
+    document.querySelectorAll(".services__grid, .diff-grid, .testimonials__grid, .gallery__grid").forEach((grid) => {
+      Array.from(grid.children).forEach((child, i) => {
+        if (child.classList.contains("reveal") && !child.hasAttribute("data-delay")) {
+          child.setAttribute("data-delay", String(Math.min(i + 1, 6)));
+        }
+      });
+    });
+
+    if (prefersReducedMotion()) {
       nodes.forEach((el) => el.classList.add("is-visible"));
       return;
     }
@@ -33,203 +115,117 @@
       return;
     }
 
-    if (!revealObserver) {
-      revealObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              revealObserver.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
-      );
-    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -48px 0px" }
+    );
 
-    nodes.forEach((el) => revealObserver.observe(el));
+    nodes.forEach((el) => io.observe(el));
   }
 
-  /* ---------- Contact form validation + real submit path ---------- */
-  function validateField(field, value) {
-    const name = field.name;
-    const v = value.trim();
+  /* ---------- Light parallax on hero visual ---------- */
+  function setupParallax() {
+    const target = document.querySelector("[data-parallax]");
+    if (!target || prefersReducedMotion()) return;
 
-    if (field.required && !v) {
-      return "Preencha este campo.";
-    }
+    let ticking = false;
 
-    if (name === "name" && v) {
-      if (v.length < 2) return "Informe ao menos 2 caracteres.";
-      if (!/^[A-Za-zÀ-ÿ\s'.-]+$/.test(v)) return "Use apenas letras e espaços.";
-    }
-
-    if (name === "email" && v) {
-      // RFC-lite: local@domain.tld
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) {
-        return "E-mail inválido. Ex: nome@email.com";
-      }
-    }
-
-    if (name === "phone" && v) {
-      const digits = v.replace(/\D/g, "");
-      if (digits.length < 10 || digits.length > 11) {
-        return "Telefone com DDD: 10 ou 11 dígitos.";
-      }
-    }
-
-    if (name === "message" && v) {
-      if (v.length < 10) return "Mensagem muito curta (mín. 10 caracteres).";
-      if (v.length > 1200) return "Mensagem muito longa (máx. 1200).";
-    }
-
-    if (name === "subject" && field.tagName === "SELECT" && field.required && !v) {
-      return "Selecione um assunto.";
-    }
-
-    return "";
-  }
-
-  function setFieldError(wrapper, message) {
-    const errorEl = wrapper.querySelector(".error");
-    const input = wrapper.querySelector("input, select, textarea");
-    if (message) {
-      wrapper.classList.add("is-invalid");
-      if (errorEl) errorEl.textContent = message;
-      if (input) input.setAttribute("aria-invalid", "true");
-    } else {
-      wrapper.classList.remove("is-invalid");
-      if (errorEl) errorEl.textContent = "";
-      if (input) input.setAttribute("aria-invalid", "false");
-    }
-  }
-
-  function maskPhone(input) {
-    let d = input.value.replace(/\D/g, "").slice(0, 11);
-    if (d.length > 6) {
-      input.value = `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`;
-    } else if (d.length > 2) {
-      input.value = `(${d.slice(0, 2)}) ${d.slice(2)}`;
-    } else if (d.length > 0) {
-      input.value = `(${d}`;
-    } else {
-      input.value = "";
-    }
-  }
-
-  function setupContactForm() {
-    const form = document.getElementById("contact-form");
-    if (!form) return;
-
-    const fields = form.querySelectorAll(".form-field");
-
-    fields.forEach((wrapper) => {
-      const input = wrapper.querySelector("input, select, textarea");
-      if (!input) return;
-
-      const run = () => {
-        const msg = validateField(input, input.value);
-        setFieldError(wrapper, msg);
-      };
-
-      input.addEventListener("blur", run);
-      input.addEventListener("input", () => {
-        if (input.name === "phone") maskPhone(input);
-        if (wrapper.classList.contains("is-invalid")) run();
-      });
-    });
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      let firstInvalid = null;
-      let ok = true;
-
-      fields.forEach((wrapper) => {
-        const input = wrapper.querySelector("input, select, textarea");
-        if (!input) return;
-        const msg = validateField(input, input.value);
-        setFieldError(wrapper, msg);
-        if (msg) {
-          ok = false;
-          if (!firstInvalid) firstInvalid = input;
-        }
-      });
-
-      if (!ok) {
-        firstInvalid?.focus();
+    const update = () => {
+      const rect = target.getBoundingClientRect();
+      const viewH = window.innerHeight || 1;
+      // Only apply while near viewport
+      if (rect.bottom < 0 || rect.top > viewH) {
+        ticking = false;
         return;
       }
+      const progress = (rect.top + rect.height / 2 - viewH / 2) / viewH;
+      const y = progress * -18; // subtle
+      target.style.transform = `translate3d(0, ${y.toFixed(2)}px, 0)`;
+      ticking = false;
+    };
 
-      const data = new FormData(form);
-      const name = String(data.get("name") || "").trim();
-      const email = String(data.get("email") || "").trim();
-      const phone = String(data.get("phone") || "").trim();
-      const subject = String(data.get("subject") || "").trim();
-      const message = String(data.get("message") || "").trim();
-      const channel = String(data.get("channel") || "whatsapp");
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (!ticking) {
+          window.requestAnimationFrame(update);
+          ticking = true;
+        }
+      },
+      { passive: true }
+    );
+  }
 
-      /*
-       * Sem backend de e-mail neste front estático.
-       * Dois canais reais:
-       * 1) WhatsApp (preferencial da loja) — abre conversa com texto montado
-       * 2) mailto: — abre o cliente de e-mail do usuário
-       * Nunca usamos alert('Enviado!') fake.
-       */
-      const body = [
-        `Olá, Super Pet Shop!`,
-        ``,
-        `Nome: ${name}`,
-        `E-mail: ${email}`,
-        `Telefone: ${phone}`,
-        `Assunto: ${subject}`,
-        ``,
-        message,
-      ].join("\n");
+  /* ---------- Gallery Lightbox ---------- */
+  function setupLightbox() {
+    const lightbox = document.getElementById("lightbox");
+    const img = document.getElementById("lightbox-img");
+    const closeBtn = lightbox?.querySelector("[data-lightbox-close]");
+    const triggers = document.querySelectorAll("[data-lightbox-src]");
 
-      if (channel === "email") {
-        const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-          `[Site] ${subject} — ${name}`
-        )}&body=${encodeURIComponent(body)}`;
-        window.location.href = mailto;
-      } else {
-        const waText = body + `\n\n(Enviado pelo formulário do site)`;
-        window.open(
-          `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waText)}`,
-          "_blank",
-          "noopener,noreferrer"
-        );
+    if (!lightbox || !img || !triggers.length) return;
+
+    let lastFocus = null;
+
+    function open(src, alt) {
+      lastFocus = document.activeElement;
+      img.src = src;
+      img.alt = alt || "Foto ampliada";
+      lightbox.classList.add("is-open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.classList.add("lightbox-open");
+      closeBtn?.focus();
+    }
+
+    function close() {
+      lightbox.classList.remove("is-open");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("lightbox-open");
+      img.removeAttribute("src");
+      if (lastFocus && typeof lastFocus.focus === "function") {
+        lastFocus.focus();
       }
+    }
 
-      form.reset();
-      fields.forEach((w) => setFieldError(w, ""));
-      const status = document.getElementById("form-status");
-      if (status) {
-        status.textContent =
-          channel === "email"
-            ? "Abrimos seu app de e-mail com a mensagem pronta. É só enviar."
-            : "Abrimos o WhatsApp com sua mensagem. É só tocar em enviar.";
+    triggers.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        open(btn.getAttribute("data-lightbox-src"), btn.getAttribute("data-lightbox-alt"));
+      });
+    });
+
+    closeBtn?.addEventListener("click", close);
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) close();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && lightbox.classList.contains("is-open")) {
+        close();
       }
     });
   }
 
-  /* ---------- Schedule CTA → WhatsApp ---------- */
-  function setupScheduleLinks() {
-    document.querySelectorAll("[data-schedule]").forEach((el) => {
-      const service = el.getAttribute("data-schedule") || "banho e tosa";
-      const msg = `Olá, Super Pet Shop! Quero agendar *${service}*. Podem me passar horários disponíveis?`;
-      if (el.tagName === "A") {
-        el.href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
-        el.target = "_blank";
-        el.rel = "noopener noreferrer";
-      } else {
-        el.addEventListener("click", () => {
-          window.open(
-            `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`,
-            "_blank",
-            "noopener,noreferrer"
-          );
-        });
-      }
+  /* ---------- Smooth anchor offset handled by CSS; enhance focus ---------- */
+  function setupAnchors() {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", (e) => {
+        const id = anchor.getAttribute("href");
+        if (!id || id === "#") return;
+        const target = document.querySelector(id);
+        if (!target) return;
+        // Let native smooth scroll work; move focus for a11y after short delay
+        setTimeout(() => {
+          if (!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");
+          target.focus({ preventScroll: true });
+        }, 400);
+      });
     });
   }
 
@@ -240,14 +236,15 @@
     });
   }
 
+  /* ---------- Init ---------- */
   ready(() => {
-    observeReveals(document);
-    setupContactForm();
-    setupScheduleLinks();
+    setupNavbar();
+    setupMobileNav();
+    setupActiveNav();
+    setupReveal();
+    setupParallax();
+    setupLightbox();
+    setupAnchors();
     setYear();
   });
-
-  window.SPS = window.SPS || {};
-  window.SPS.observeReveals = observeReveals;
-  window.SPS.WA_NUMBER = WA_NUMBER;
 })();
